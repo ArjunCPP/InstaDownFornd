@@ -4,20 +4,27 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* DNS Prefetch & Preconnect for Performance */}
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="https://cdninstagram.com" />
+        <link rel="dns-prefetch" href="https://scontent.cdninstagram.com" />
+        <link rel="dns-prefetch" href="https://instadownback-1.onrender.com" />
+
         {/* Preconnect to Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
+
         {/* Display Font - Outfit (modern, geometric) */}
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" 
-          rel="stylesheet" 
+        <link
+          href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet"
         />
-        
+
         {/* Body Font - Manrope (clean, readable) */}
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" 
-          rel="stylesheet" 
+        <link
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
         />
       </Head>
       <body>

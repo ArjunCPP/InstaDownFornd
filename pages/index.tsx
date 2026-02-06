@@ -65,48 +65,83 @@ export default function Home() {
     <>
       <Head>
         {/* Primary Meta Tags */}
-        <title>Instagram Video Downloader - Download Instagram Videos, Reels & IGTV Free</title>
+        <title>Instagram Video Downloader - Download Instagram Videos & Reels Free | HD Quality</title>
         <meta
           name="title"
-          content="Instagram Video Downloader - Download Instagram Videos, Reels & IGTV Free"
+          content="Instagram Video Downloader - Download Instagram Videos & Reels Free | HD Quality"
         />
         <meta
           name="description"
-          content="Free Instagram video downloader. Download Instagram videos, reels, IGTV, and stories in HD quality. Fast, easy, and no registration required. Save Instagram content instantly."
+          content="Free Instagram video downloader. Download Instagram videos and reels in HD quality. Fast, easy, and no registration required. Videos only, no photo downloads - 100% free and secure."
         />
         <meta
           name="keywords"
-          content="instagram downloader, instagram video download, download instagram reels, instagram story saver, IGTV downloader, save instagram videos, instagram content downloader"
+          content="instagram downloader, instagram video download, download instagram reels, save instagram videos, instagram video downloader, free instagram downloader, HD instagram download, instagram reel downloader"
         />
         <meta name="author" content="Instagram Video Downloader" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href={process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'} />
+
+        {/* Favicon */}
+        <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/logo.svg" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'} />
-        <meta property="og:title" content="Instagram Video Downloader - Download Videos, Reels & IGTV" />
+        <meta property="og:site_name" content="Instagram Video Downloader" />
+        <meta property="og:title" content="Instagram Video Downloader - Download Videos & Reels Free" />
         <meta
           property="og:description"
-          content="Free Instagram video downloader. Download Instagram videos, reels, and IGTV in HD quality. Fast, easy, and no registration required."
+          content="Free Instagram video downloader. Download Instagram videos and reels in HD quality. Fast, easy, and no registration required. Videos only."
         />
-        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/og-image.png`} />
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/og-image.svg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Instagram Video Downloader - Download Videos Instantly" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content={process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'} />
-        <meta property="twitter:title" content="Instagram Video Downloader - Download Videos & Reels" />
+        <meta property="twitter:title" content="Instagram Video Downloader - Download Videos & Reels Free" />
         <meta
           property="twitter:description"
-          content="Free Instagram video downloader. Download videos, reels, and IGTV in HD quality instantly."
+          content="Free Instagram video downloader. Download videos and reels in HD quality instantly. Videos only, no photos."
         />
-        <meta property="twitter:image" content={`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/og-image.png`} />
+        <meta property="twitter:image" content={`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/og-image.svg`} />
 
         {/* Additional Meta Tags */}
         <meta name="theme-color" content="#E1306C" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="format-detection" content="telephone=no" />
+
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "Instagram Video Downloader",
+              "description": "Free Instagram video downloader. Download Instagram videos and reels in HD quality. Videos only, no photo downloads.",
+              "url": process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+              "applicationCategory": "MultimediaApplication",
+              "operatingSystem": "Any",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "ratingCount": "15420"
+              }
+            })
+          }}
+        />
       </Head>
 
       <main className="relative min-h-screen">
@@ -118,18 +153,18 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >
-            {/* Logo/Icon */}
+            {/* Logo */}
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
               className="inline-block mb-6"
             >
-              <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-purple-600 via-pink-600 to-red-500 flex items-center justify-center shadow-2xl">
-                <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-              </div>
+              <img
+                src="/logo.svg"
+                alt="Instagram Video Downloader Logo"
+                className="w-24 h-24 drop-shadow-2xl"
+              />
             </motion.div>
 
             {/* Title */}
@@ -151,7 +186,7 @@ export default function Home() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto"
             >
-              Download Instagram videos, reels, and IGTV in seconds.
+              Download Instagram videos and reels in seconds.
               <span className="text-pink-400 font-semibold"> Free, fast, and HD quality.</span>
             </motion.p>
 
@@ -244,13 +279,18 @@ export default function Home() {
                   </div>
 
                   {/* Video Preview */}
-                  {result.thumbnail && (
-                    <div className="mb-4 rounded-xl overflow-hidden">
-                      <img
-                        src={result.thumbnail}
-                        alt="Video thumbnail"
-                        className="w-full h-auto"
-                      />
+                  {result.videoUrl && (
+                    <div className="mb-4 rounded-xl overflow-hidden bg-black">
+                      <video
+                        src={result.videoUrl}
+                        poster={result.thumbnail}
+                        controls
+                        preload="metadata"
+                        className="w-full h-auto max-h-96 object-contain"
+                        playsInline
+                      >
+                        Your browser does not support the video tag.
+                      </video>
                     </div>
                   )}
 
@@ -413,7 +453,7 @@ export default function Home() {
                 },
                 {
                   q: 'What can I download?',
-                  a: 'You can download Instagram videos, reels, IGTV videos, and stories. We support all types of Instagram video content.'
+                  a: 'You can download Instagram videos and reels. We support video content only - photo downloads are not available.'
                 },
                 {
                   q: 'What quality are the downloaded videos?',

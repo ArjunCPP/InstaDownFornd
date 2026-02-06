@@ -1,0 +1,50 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A0A0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#141416;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="instaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#833AB4;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C13584;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#E1306C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FD1D1D;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glowGradient" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#833AB4;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#833AB4;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Glow Effects -->
+  <circle cx="200" cy="315" r="300" fill="url(#glowGradient)"/>
+  <circle cx="1000" cy="315" r="250" fill="url(#glowGradient)"/>
+  
+  <!-- Logo Icon (Left Side) -->
+  <g transform="translate(150, 215)">
+    <circle cx="100" cy="100" r="95" fill="url(#instaGradient)" opacity="0.15"/>
+    <rect x="92" y="50" width="16" height="70" rx="8" fill="url(#instaGradient)"/>
+    <path d="M 100 140 L 70 110 L 85 110 L 100 125 L 115 110 L 130 110 Z" fill="url(#instaGradient)"/>
+    <path d="M 60 145 L 60 155 Q 60 160 65 160 L 135 160 Q 140 160 140 155 L 140 145" 
+          stroke="url(#instaGradient)" stroke-width="8" stroke-linecap="round" fill="none"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="450" y="280" font-family="'Outfit', sans-serif" font-size="72" font-weight="800" fill="#FFFFFF">
+    Instagram Video
+  </text>
+  <text x="450" y="360" font-family="'Outfit', sans-serif" font-size="72" font-weight="800" fill="url(#instaGradient)">
+    Downloader
+  </text>
+  
+  <!-- Tagline -->
+  <text x="450" y="430" font-family="'Manrope', sans-serif" font-size="32" font-weight="500" fill="#A0A0A8">
+    Download Videos, Reels &amp; IGTV Instantly
+  </text>
+  <text x="450" y="475" font-family="'Manrope', sans-serif" font-size="28" font-weight="600" fill="#E1306C">
+    Free • HD Quality • No Registration
+  </text>
+</svg>

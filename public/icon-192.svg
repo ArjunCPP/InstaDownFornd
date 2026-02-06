@@ -1,0 +1,29 @@
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#833AB4;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C13584;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#E1306C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FD1D1D;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Rounded Square Background -->
+  <rect width="192" height="192" rx="48" fill="url(#gradient)"/>
+  
+  <!-- Download Icon -->
+  <g transform="translate(96, 96)">
+    <!-- Arrow Shaft -->
+    <rect x="-8" y="-35" width="16" height="50" rx="8" fill="white"/>
+    
+    <!-- Arrow Head -->
+    <path d="M 0 25 L -20 5 L -10 5 L 0 15 L 10 5 L 20 5 Z" fill="white"/>
+    
+    <!-- Download Tray -->
+    <path d="M -30 30 L -30 38 Q -30 42 -26 42 L 26 42 Q 30 42 30 38 L 30 30" 
+          stroke="white" 
+          stroke-width="6" 
+          stroke-linecap="round" 
+          fill="none"/>
+  </g>
+</svg>

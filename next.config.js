@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  compress: true, // Enable gzip compression
+  poweredByHeader: false, // Remove X-Powered-By header for security
   images: {
     domains: ['instagram.com', 'cdninstagram.com', 'scontent.cdninstagram.com'],
     remotePatterns: [
@@ -13,6 +15,8 @@ const nextConfig = {
         hostname: '**.fbcdn.net',
       },
     ],
+    formats: ['image/avif', 'image/webp'], // Modern image formats
+    minimumCacheTTL: 60, // Cache images for 60 seconds
   },
   async headers() {
     return [
@@ -38,7 +42,20 @@ const nextConfig = {
           {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin'
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()'
           }
+        ],
+      },
+      {
+        source: '/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
         ],
       },
     ]

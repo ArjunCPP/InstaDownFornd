@@ -255,9 +255,73 @@ input:focus-visible {
   outline-offset: 2px;
 }
 
+/* Video Player Styles */
+video {
+  outline: none;
+}
+
+video::-webkit-media-controls-panel {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+}
+
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-volume-slider {
+  filter: brightness(1.2);
+}
+
+/* Skeleton Loading Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  body::before {
+    animation: none;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   body::before {
     animation: rotate 40s linear infinite;
+  }
+  
+  /* Optimize video on mobile */
+  video {
+    max-height: 300px;
   }
 }
